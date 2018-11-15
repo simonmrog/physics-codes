@@ -2,30 +2,37 @@ import java.text.DecimalFormat;
 
 public class Projectile {
 	
-	public Projectile(double speed, double angleInDegrees) {
+	DecimalFormat format;
+	double g, initSpeed, angleDeg, angleRads, maxRange;
+	
+	public Projectile(double v0, double angle) {
 		
-		DecimalFormat format = new DecimalFormat("0.00");
-		double g = 9.8, angleInRads, range;
-		String sRange;
-
-		angleInRads = angleInDegrees * Math.PI/180; //conversion of the angle
+		format = new DecimalFormat("0.00");
+		g = 9.8;
+		initSpeed = v0;
+		angleDeg = angle;
+		angleRads = angleDeg * Math.PI/180; //conversion of the angle
+	}
+	
+	public void getMaximumRange() {
+		
 		//formula to calculate max range in a proyectile motion
-		range = 2 * speed * speed * Math.sin(angleInRads) * Math.cos(angleInRads) / g;
+		maxRange = 2 * initSpeed * initSpeed * Math.sin(angleRads) * Math.cos(angleRads)
+				/ g;
+		
 		//formatting output
-		sRange = format.format(range);
+		String sRange = format.format(maxRange);
 		//printing result
 		System.out.println("Range of the projectile = " + sRange + " meters.");
 	}
 	
 	public static void main(String[] args) {
 		
-		//Use the next two lines if you want to grab the values by console
+		//Use the next two lines if you want to grab the values directly by console
 		//double speed = Double.parseDouble(args[0]);
 		//double angleInDegrees = Double.parseDouble(args[1]);
 
-		new Projectile(12, 30);
-		new Projectile(12, 45);
-		new Projectile(12, 55);
+		Projectile P = new Projectile(12, 30);
+		P.getMaximumRange();
 	}
-
 }
