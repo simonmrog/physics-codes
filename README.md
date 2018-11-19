@@ -9,3 +9,5 @@
 <b> projectile_motion_no_air.cpp: </b> Projectile motion calculation of x(t), y(t), vx(t), vy(t) without air resistance and some plots.
 
 <b> projectile_motion_with_drag.cpp: </b> Projectile motion calculation of x(t), y(t), vx(t), vy(t) considering a drag force of the form F = mkv and plot taking different values of k.
+
+<b> anisotropic_harmonic_oscillator.cpp </b> Calculation of x(t), y(t), vx(t), vy(t) of an anisotropic harmonic oscillator with frequencies wx and wy, Plotting cases wx = wy (circle), wx != wy (lissajous curve).
